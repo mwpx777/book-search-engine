@@ -2,7 +2,7 @@
 // define the query and mutation functionality to work with Mongoose Models
 
 const { AuthenitcationError, AuthenticationError } = require('apollo-server-express');
-const { User, Book } = require('../models');
+const { User } = require('../models');
 const { signToken } = require('../utils/auth');
 
 
@@ -10,6 +10,7 @@ const resolvers = {
     Query: {
         me: async (parent, args, context) => {
             if (context.user) {
+                // console.log('success')
                 const userData = await User.findOne({ _id: context.user._id })
                     .select('-__v -password')
 
@@ -48,16 +49,18 @@ const resolvers = {
             const token = signToken(user);
             return { token, user };
         },
-        savedBook: async (parent, { input }, context) => {
+        saveBook: async (parent, { input }, context) => {
+           
             if (context.user) {
 
-                const newSavedBooks = await User.findByIdAndUpdate(
+                const saveUserBooks = await User.findByIdAndUpdate(
                     { _id: context.user._id },
                     { $push: { savedBooks: input } },
                     // return savedBook array with added savedBook
                     { new: true }
                 );
-                return { newSavedBooks };
+                // console.log(context.user._id)
+                return { saveUserBooks };
             }
             throw new AuthenticationError('You need to be logged in!');
         },

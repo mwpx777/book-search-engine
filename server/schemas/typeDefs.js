@@ -9,10 +9,10 @@ const typeDefs = gql`
     }
 
     type User{
-        _id: ID!
-        username: String!
-        email: String!
-        bookCount: String
+        _id: ID
+        username: String
+        email: String
+        bookCount: Int
         savedBooks: [Book]
     }
 
@@ -22,12 +22,12 @@ const typeDefs = gql`
     }
 
     type Book{
-        bookId: ID
         authors: [String]
         description: String
-        title: String
+        bookId: String
         image: String
         link: String
+        title: String
     }
 
     type Mutation{
@@ -39,15 +39,16 @@ const typeDefs = gql`
        
     }
 
-    type SavedBook{
-        bookId: ID
+    type savedBook{
+        bookId: String
         authors: [String]
-        description: String
         title: String
+        description: String
         image: String
         link: String
 
     }
     `;
+    
 
 module.exports = typeDefs;
