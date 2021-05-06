@@ -35,7 +35,7 @@ Heroku
 https://dashboard.heroku.com/apps/cryptic-crag-95710
 
 Deployed Application
-
+https://cryptic-crag-95710.herokuapp.com/
 
 
 ## **Screenshot**
@@ -44,10 +44,10 @@ Deployed Application
 
 
 ## **Features**
-This project features Node.js, Express.js, MongoDB and Mongoose, Service Worker and IndexedDB.
+This project features Node.js, Express.js, GraphQL, Apollo Server, MongoDB and Mongoose.
 
 ## **Usage**
-This progressive web application can be utilized by someone who would like to track their expenses while on vacation.  This application can be installed to a smart phone homescreen or as a desktop link.
+This Google Book Search app can be utilized by a user that would like search and save books by title that they are intersted in.
 
 
 
