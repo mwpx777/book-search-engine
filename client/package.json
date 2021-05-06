@@ -9,6 +9,7 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "apollo-boost": "^0.4.9",
+    "apollo-client": "^2.6.10",
     "apollo-react-hooks": "0.0.1",
     "bootstrap": "^4.4.1",
     "graphql": "^15.5.0",
